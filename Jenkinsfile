@@ -46,11 +46,11 @@ pipeline {
         always{
             echo 'Always running process'
         }
-    }
-    success {
+    
+    success{
         echo 'send succes notification'
     }
-    failure {
+    failure{
         echo 'failure notifications'
     }
 }
