@@ -24,19 +24,20 @@
 
 pipeline {
    agent any
+
     stages {
         stage('Building code'){
-            steps{
+            steps {
                 echo 'Matthews is Building  code'
             }
         }
         stage ('Testing code'){
-            steps{
+            steps {
                 echo 'Madhu is Testing code'
             }
         }
         stage('Deploying code'){
-            steps{
+            steps {
                 echo 'Lalitha is Deploying code'
             }
         }
