@@ -44,13 +44,13 @@ pipeline {
     }
     post {
         always{
-            echo 'Always running process'
+            echo "Always running process"
         }
     
     success{
-        echo 'send succes notification'
+        echo "send succes notification"
     }
     failure{
-        echo 'failure notifications'
+        echo "failure notifications"
     }
 }
