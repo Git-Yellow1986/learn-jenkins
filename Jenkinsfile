@@ -23,6 +23,7 @@
 // }
 
 pipeline {
+   agent any
     stages {
         stage('Building code'){
             steps{
