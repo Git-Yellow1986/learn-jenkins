@@ -26,11 +26,15 @@ pipeline {
    agent {
     label 'AGENT-11'
    }
-
+  options {
+        // Timeout counter starts AFTER agent is allocated
+        timeout(time: 10, unit: 'SECONDS')
+         disableConcurrentBuilds() 
     stages {
         stage('Building code'){
             steps {
                 echo 'Matthews is Building  code'
+                sh 'sleep 10'
             }
         }
         stage ('Testing code'){
