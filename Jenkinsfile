@@ -40,7 +40,7 @@ pipeline {
                 echo "Hello ${params.PERSON}"
 
                 echo "Biography: ${params.BIOGRAPHY}"
-                
+
                 echo "Toggle: ${params.TOGGLE}"
 
                 echo "Choice: ${params.CHOICE}"
@@ -48,6 +48,21 @@ pipeline {
                 echo "Password: ${params.PASSWORD}"
             }
         }
+        
+        stage ('Approval'){
+                input {
+                message "Should we continue?"
+                ok "Yes, we should."
+                submitter "alice,bob"
+                parameters {
+                    string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
+                }
+            }
+        }
+            steps {
+                echo "Hello, ${PERSON}, nice to meet you."
+            }
+        
     }
     post {
         always{
