@@ -35,6 +35,16 @@ pipeline {
                 echo 'Lalitha is Deploying code'
             }
         }
+
+        stage('master-branch-stuff') {
+            when {
+                    branch 'main'
+                }
+         steps {
+            echo 'run this stage - ony if the branch = main branch'
+        }
+        }
+        
         stage ('Print params'){
             steps {
                 echo "Hello ${params.PERSON}"
@@ -57,7 +67,7 @@ pipeline {
                 submitter "alice,bob"
 
                 parameters {
-                    
+
                     string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
                 }
             }
