@@ -24,17 +24,17 @@
 
 pipeline {
    agent {
-    label 'AGENT-12'
+        label 'AGENT-1'
    }
-  options {
-        // Timeout counter starts AFTER agent is allocated
-        timeout(time: 10, unit: 'SECONDS')
-         disableConcurrentBuilds() 
+//   options {
+//         // Timeout counter starts AFTER agent is allocated
+//         timeout(time: 10, unit: 'SECONDS')
+//          disableConcurrentBuilds() 
     stages {
         stage('Building code'){
             steps {
                 echo 'Matthews is Building  code'
-                sh 'sleep 10'
+               // sh 'sleep 10'
             }
         }
         stage ('Testing code'){
@@ -51,7 +51,7 @@ pipeline {
     post {
         always{
             echo "Always running process"
-            deleteDir()
+            //deleteDir()
         }
     
         success{
