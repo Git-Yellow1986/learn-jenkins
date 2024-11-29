@@ -36,7 +36,7 @@ pipeline {
             }
         }
 
-        stage('master-branch-stuff') {
+        stage('branch-main') {
             when {
                     branch 'main'
                 }
@@ -44,7 +44,7 @@ pipeline {
             echo 'run this stage - ony if the branch = main branch'
         }
         }
-        
+
         stage ('Print params'){
             steps {
                 echo "Hello ${params.PERSON}"
