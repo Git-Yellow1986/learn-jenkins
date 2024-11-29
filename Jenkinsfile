@@ -51,7 +51,7 @@ pipeline {
     post {
         always{
             echo "Always running process"
-            //deleteDir()
+            deleteDir()
         }
     
         success{
