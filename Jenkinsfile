@@ -40,6 +40,7 @@ pipeline {
             when {
                     expression { env.GIT_BRANCH == "origin/main" }
                 }
+                
          steps {
             echo 'run this stage - ony if the branch = main branch'
         }
