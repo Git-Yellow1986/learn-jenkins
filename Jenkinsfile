@@ -12,7 +12,7 @@ pipeline {
         stage('Building code'){
             steps {
                 echo 'Matthews is Building  code'
-               // sh 'sleep 10'
+                 sh 'sleep 10'
             }
         }
         stage ('Testing code'){
