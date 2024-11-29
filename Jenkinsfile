@@ -1,32 +1,10 @@
-// pipeline {
-//     agent any
-
-//     stages {
-//         stage('Build') {
-//             steps {
-//                 echo 'Building the project...'
-//             }
-//         }
-
-//         stage('Test') {
-//             steps {
-//                 echo 'Running tests...'
-//             }
-//         }
-
-//         stage('Deploy') {
-//             steps {
-//                 echo 'Deploying the application...'
-//             }
-//         }
-//     }
-// }
-
 pipeline {
    agent {
         label 'AGENT-1'
    }
-//   options {
+   options {
+      timeout(time: 10, unit: 'SECONDS') 
+  }
 //         // Timeout counter starts AFTER agent is allocated
 //         timeout(time: 10, unit: 'SECONDS')
 //          disableConcurrentBuilds() 
