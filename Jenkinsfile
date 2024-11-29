@@ -38,7 +38,7 @@ pipeline {
 
         stage('branch-main') {
             when {
-                    branch 'main'
+                    branch == 'main'
                 }
          steps {
             echo 'run this stage - ony if the branch = main branch'
